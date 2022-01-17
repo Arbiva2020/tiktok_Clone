@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import VideoFooter from "../VideoFooter/VideoFooter";
+import VideoSidebar from "../VideoSidebar/VideoSidebar";
 import "./Video.css";
 
 function Video() {
@@ -35,6 +36,7 @@ function Video() {
         allowfullscreen
       ></iframe>
       <VideoFooter />
+      <VideoSidebar />
     </div>
   );
 }
