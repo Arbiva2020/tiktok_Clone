@@ -3,7 +3,7 @@ import VideoFooter from "../VideoFooter/VideoFooter";
 import VideoSidebar from "../VideoSidebar/VideoSidebar";
 import "./Video.css";
 
-function Video() {
+function Video({url, channel, description, song, likes, messages, shares}) {
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef(null);
   const handleVideoPress = () => {
@@ -29,14 +29,22 @@ function Video() {
         ref={videoRef}
         width="660"
         height="750"
-        src="https://www.youtube.com/embed/-Ti1tjYmg2s"
+        src={url}
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
-      <VideoFooter />
-      <VideoSidebar />
+      <VideoFooter
+      channel={channel}
+      description={description}
+      song={song}
+       />
+      <VideoSidebar
+      likes={likes}
+      shares={shares}
+      messages={messages}
+       />
     </div>
   );
 }
